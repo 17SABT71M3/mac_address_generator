@@ -1,4 +1,3 @@
-Using `print_mac.bat` in other scripts:
 ```
 REM use print_mac.bat with arguments
 REM when calling from scripts.
