@@ -1,6 +1,5 @@
 @echo off
 setlocal enabledelayedexpansion
-set FLAG_STAY_OPEN=1
 title im alone !RANDOM!
 REM if "%~1"=="12" goto start
 REM start cmd /c ""%~fp0" 12" & goto :eof
@@ -19,8 +18,9 @@ set oh_my=%oh_my%%pick_hex%
 if %len% LEQ 10 goto create_hex
 :im_evil
 echo %first%:%oh_my:~0,2%:%oh_my:~2,2%:%oh_my:~4,2%:%oh_my:~6,2%:%oh_my:~8,2%
-if %FLAG_STAY_OPEN%==1 goto :give_choice
-goto :eof
+if "%~1" NEQ "" goto :eof
+goto :give_choice
+
 
 :give_choice
 choice /m "copy? y/n" /n /d n /t 2
